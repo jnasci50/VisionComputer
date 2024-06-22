@@ -33,7 +33,7 @@ while True:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
     # Mostra o frame com os rostos detectados
-    cv2.imshow('Face Capture', frame)
+    cv2.imshow('Face Capture', gray)
 
     # Aguarda a entrada do usuário
     key = cv2.waitKey(1) & 0xFF
