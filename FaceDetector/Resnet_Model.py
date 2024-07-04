@@ -55,7 +55,7 @@ while True:
         labels = [line.strip() for line in f.readlines()]
 
     # Obter as top 3 previsões
-    top_indices = np.argsort(preds[0])[::-1][:3]
+    top_indices = np.argsort(preds[0])[::-1][:2]
     top_labels = [labels[i] for i in top_indices]
     top_scores = [preds[0][i] for i in top_indices]
 
@@ -63,7 +63,7 @@ while True:
     for i, (label, score) in enumerate(zip(top_labels, top_scores)):
         text = f"{label}: {score:.2f}"
         cv2.putText(frame, text, (10, 30 + i * 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-        print(f'imagem para resnet antes da webcam:{text}')
+        #print(f'imagem para resnet antes da webcam:{text}')
 
     # Exibir o frame
     cv2.imshow('Webcam', frame)
